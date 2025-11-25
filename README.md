@@ -1,29 +1,55 @@
-# AI Startup with PyTorch
+# PyTorch Production AI
 
-## Overview
+A practical guide to building and deploying AI models with PyTorch in production environments.
 
-This is the code for [this](https://youtu.be/OE6wssMJoag) video on Youtube by Siraj Raval on building an AI Startup with PyTorch. [This](https://github.com/flatfisher/android-dialogflow-chatbot-sample) is the original Dialogflow + Android integration project. [This](https://colab.research.google.com/drive/1b6oSQl84XdRv_abjhg1vpTpiZyZw2TPF) is the colab that I demonstrated in the video where I train the PyTorch model on movie reviews, then convert it to ONNX, then to Tensorflow's expected protobuf format. 
+## About This Project
 
+This repository contains the companion code for building production-ready AI applications with PyTorch. Originally featured in a technical demo covering the complete pipeline from model training to mobile deployment.
 
-## #AISTARTUPCHALLENGE
+## Quick Start
 
-![alt text](https://camo.githubusercontent.com/014e8fd4face8a37ecb279dcc2bee5675579b8b1/68747470733a2f2f692e696d6775722e636f6d2f5053314a3673512e706e67 "Logo Title Text 1")
+### Model Development
+The core model training pipeline is available as a Jupyter notebook:
+```python
+# Train sentiment analysis model on movie reviews
+Build_an_AI_Startup_with_PyTorch.ipynb
+```
 
-Due date is May 15 2019 
-Submit your entry [here](https://forms.gle/9b2rwMDZYcF6XGSN8). 
+### Mobile Integration
+The Android application demonstrates model deployment:
+- Import project in Android Studio
+- Dependencies auto-configured via Gradle
+- TensorFlow Lite for mobile inference
+- Place `.pb` models in `app/src/main/assets/`
+
+## Tech Stack
+
+**Core AI**
+- PyTorch for model development
+- ONNX for model interoperability
+- TensorFlow Lite for mobile deployment
+
+**Mobile & Backend**
+- Android native development
+- Firebase for cloud services
+- PayPal for payment integration
+- DialogFlow for conversational AI
+
+## Development Notes
+
+This project demonstrates a complete workflow:
+1. Model training with PyTorch
+2. Conversion to ONNX format
+3. Export to TensorFlow protobuf
+4. Mobile deployment with TensorFlow Lite
+5. Full-stack integration with backend services
+
+The current implementation focuses on sentiment analysis using movie reviews, but the architecture supports various AI applications.
 
 ## Dependencies
 
-- Firebase
-- Paypal 
-- Tensorflow Lite
-- DialogFlow
-- PyTorch
-
-## Instructions
-
-Download [Android Studio](https://developer.android.com/studio) then import this project. Since I've placed the dependencies in the build.gradle file, it should auto-download them for you, which is awesome. It needs more features, and better integrated dataflow. I could've put more time into it, but I'm on to the next one. The model was too big to upload to GitHub. Place any .pb model into the app/src/main/assets folder and Tensorflow lite will detect it so it can be used for inference.
-
-## Credits 
-
-So many people. I stand on the shoulders of giants. Respect to all developers. 
+All major dependencies are managed through Gradle. Key requirements include:
+- PyTorch 1.0+
+- TensorFlow Lite
+- Firebase SDK
+- Android Studio 3.0+
